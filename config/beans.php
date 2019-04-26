@@ -11,4 +11,24 @@ return [
         'shared' => false,
         'singleton' => true,
     ],
+    'App\Contracts\FeedbackService' => [
+        'class' => 'App\Services\FeedbackServiceImpl',
+        'shared' => false,
+        'singleton' => true,
+    ],
+    'App\Contracts\CustomerService' => [
+        'class' => 'App\Services\CustomerServiceImpl',
+        'shared' => false,
+        'singleton' => true,
+    ],
+    'App\Contracts\ProductService' => [
+        'class' => 'App\Services\ProductServiceImpl',
+        'shared' => false,
+        'singleton' => true,
+    ],
+    'App\Contracts\ProductCategoryService' => [
+        'class' => 'App\Services\ProductCategoryServiceImpl',
+        'shared' => false,
+        'singleton' => true,
+    ],
 ];

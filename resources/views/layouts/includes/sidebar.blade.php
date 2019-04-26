@@ -33,62 +33,46 @@
                 <li class="active">
                     <a ref="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">perm_contact_calendar</i>
-                        <span>{{ __('Reservations') }}</span>
+                        <span>{{ __('Dashboard') }}</span>
                     </a>
                     <ul class="ml-menu">
                         @if(App\User::where('id', Auth::User()->id)->with('userType')->first()->user_type == App\Contracts\Constant::USERTYPE_INTEGER_ADMIN)
                         <li>
-                            <a href="{{ route('marketplace.marketplace') }}">
-                                <span>{{ __('Calendar') }}</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('reservation.index') }}">
-                                <span>{{ __('Reservations') }}</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('reservationType.index') }}">
-                                <span>{{ __('Reservation Types') }}</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
                     <a ref="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">home</i>
-                        <span>{{ __('Tables/Rooms') }}</span>
+                        <span>{{ __('Products') }}</span>
                     </a>
                     <ul class="ml-menu">
-                        <li>
-                            <a href="{{ route('roomType.index') }}">
-                                <span>{{ __('Reservation Offers') }}</span>
+                    <li>
+                            <a href="{{ route('product.index') }}">
+                                <span>{{ __('Products') }}</span>
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('room.index') }}">
-                                <span>{{ __('Tables/Rooms') }}</span>
+                            <a href="{{ route('productCategory.index') }}">
+                                <span>{{ __('Products Category') }}</span>
                             </a>
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <a href="{{ route('customer.index') }}">
-                        <i class="material-icons">people</i>
-                        <span>{{ __('Customers') }}</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('billing.index') }}">
-                        <i class="material-icons">people</i>
-                        <span>{{ __('Billings') }}</span>
-                    </a>
+                        
+                        <li>
+                            <a href="{{ route('customer.index') }}">
+                                <span>{{ __('Customers') }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('feedback.index') }}">
+                                <span>{{ __('Feedbacks') }}</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 @elseif(App\User::where('id', Auth::User()->id)->with('userType')->first()->user_type == App\Contracts\Constant::USERTYPE_INTEGER_CUSTOMER)
                 <li>
-                        <a href="{{ route('reservation.index') }}">
+                        <a href="{{ route('cart.index') }}">
                             <i class="material-icons">people</i>
-                            <span>{{ __('Make Reservations') }}</span>
+                            <span>{{ __('My Cart') }}</span>
                         </a>
                     </li>
                 @endif
@@ -98,7 +82,7 @@
         <!-- Footer -->
         <div class="legal">
             <div class="copyright">
-                <a href="#!">{{ config('app.name') }}</a> &copy; 2018
+                <a href="#!">{{ config('app.name') }}</a> &copy; 2019
             </div>
             <div class="version">
                 <strong>Version:</strong> {{ config('app.version') }}
