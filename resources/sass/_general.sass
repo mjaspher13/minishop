@@ -1,0 +1,366 @@
+.display-none
+    display: none !important
+
+.font15
+    font-size: 15px
+
+.image-holder
+    display: inline-block
+    padding: 10px
+    box-shadow: 0px 0px 4px 1px #d0d0d0
+    height: 120px
+    vertical-align: bottom
+    cursor: pointer
+    margin-right: 5px
+
+.rating-stars
+    width: 20px
+
+//.right-sidebar .nav-tabs li:last-child
+//    width: 100%
+
+// Custom Grid
+.custom-flex
+  display: flex
+  flex-wrap: wrap
+
+.custom-row
+  display: flex
+  flex-wrap: wrap
+  margin-left: -15px
+  margin-right: -15px
+
+  &--nowrap
+    flex-wrap: nowrap
+
+.custom-col
+  flex: 0 0 auto
+  padding-left: 15px
+  padding-right: 15px
+
+  &--12
+    width: 100%
+
+  &--11
+    width: 90%
+
+  &--10
+    width: 83.33%
+
+    +media-breakpoint-max(lg)
+      width: 100%
+
+  &--9
+    width: 75%
+
+  &--8
+    width: 66.66%
+
+  &--6
+    width: 50%
+
+  &--5
+    width: 41.66%
+
+  &--4
+    width: 33.33%
+
+    +media-breakpoint-max(lg)
+      width: 50%
+
+  &--3
+    width: 25%
+
+  &--2
+    width: 16.66%
+
+  &--1
+    width: 10%
+
+// Datatables
+.dataTables_wrapper
+  padding: 0px 15px
+
+// Input Tags
+.bootstrap-tagsinput
+  height: 34px
+  padding: 6px 0px
+
+  input
+    padding: 0px 0px
+
+  .tag
+    background-color: $color-primary
+    font-size: 0.875em
+
+// Buttons
+.btn
+  span
+    text-transform: uppercase
+    font-weight: 500
+
+  &-primary
+    background-color: $color-primary !important
+    color: $color-white !important
+
+    i
+      color: $color-white !important
+
+    &:hover, &:focus
+      background-color: darken($color-primary, 10) !important
+
+// Form line
+.form-group .form-line::after, .input-group .form-line::after
+  border-color: $color-primary
+
+// Label
+.label
+  &--rounded
+    padding-left: 10px
+    padding-right: 10px
+    border-radius: 25px
+
+// Block Title
+.block-title
+  padding: 8px 0px
+  border-bottom: solid 2px
+  border-color: lighten($color-primary, 35)
+
+  i
+    display: inline-block
+    vertical-align: middle
+    margin-right: 5px
+
+// Lazy Image
+img.lazy
+  transition: opacity 1s ease
+  opacity: 0
+
+  &.loaded
+    opacity: 1
+
+// Content Loader
+.content__loader
+  position: absolute
+  z-index: 5
+  top: -5px
+  left: 0px
+  width: 100%
+  height: 100%
+  background-color: $color-off-white
+  opacity: 1
+  transition: opacity 500ms ease
+  display: flex
+  justify-content: center
+  align-items: center
+
+  i
+    font-size: 6rem
+    color: $color-primary
+    animation: spin 1.5s infinite linear
+
+  &.loaded
+    z-index: 0
+    opacity: 0
+
+@keyframes spin
+  0%
+    transform: rotate(0)
+  100%
+    transform: rotate(-360deg)
+
+// Content Section
+section.content
+  position: relative
+  height: calc(100vh - 110px)
+
+.card .body
+  position: relative
+
+  .content__loader
+    background-color: $color-white
+
+// Image Upload Editor
+.image-upload
+  width: 100%
+  max-width: 300px
+
+  &__input
+    width: 0px
+    height: 0px
+    visibility: hidden
+
+  &__preview
+    width: 300px
+    height: 300px
+    background-color: $color-off-white
+    cursor: move
+    margin-bottom: 10px
+
+  &__options
+    text-align: center
+    margin-top: 5px
+
+    a
+      display: inline-block
+      cursor: pointer
+      vertical-align: middle
+
+      i
+        font-size: 2em
+
+// Custom Alert
+.custom-alert
+  position: fixed
+  left: 0px
+  top: 75px
+  width: calc(100% - 60px)
+  margin: 0px 30px
+  z-index: 0
+  opacity: 0
+  transform: translateY(-75px)
+  visibility: hidden
+  transition: all 300ms ease
+
+  +media-breakpoint-min(lg)
+    width: calc(100% - 350px)
+    margin-left: 325px
+
+  &.show
+    z-index: 100
+    visibility: visible
+    opacity: 1
+    transform: translateY(0px)
+
+// Card
+.card
+  .header .card-options
+    position: absolute
+    top: 20px
+    right: 15px
+    list-style: none
+    display: flex
+    align-items: center
+
+    .option-select
+      min-width: 280px
+      margin: 0px 10px
+
+      .caret
+        right: 0px
+
+// Tables
+.table-responsive
+  min-height: 200px
+
+// Table Image Thubnails
+.table-thumb
+  position: relative
+  width: 80px
+  height: 80px
+  line-height: 80px
+  overflow: hidden
+  background-color: lighten($color-grey, 20)
+  border-radius: 50%
+
+  &::after
+    content: ' '
+    position: absolute
+    left: 0px
+    top: 0px
+    height: 100%
+    width: 1px
+    box-shadow: 0px 0px 10px 10px lighten($color-grey, 25)
+    background-color: lighten($color-grey, 25)
+    z-index: 1
+    animation: bgColorSlide 1s infinite linear
+
+  img
+    position: relative
+    z-index: 2
+    width: 80px
+    height: 80px
+    border-radius: 50%
+    object-fit: cover
+    object-position: center center
+
+.table-icon-thumb
+  font-size: 90px
+  margin: -5px
+
+.table-icon-detail
+  font-weight: 500
+
+  i
+    vertical-align: middle
+    color: $color-primary
+
+@keyframes bgColorSlide
+  0%
+    left: 0px
+  100%
+    left: 90px
+
+// Media
+.media
+
+  &__thumb
+    position: relative
+    width: 80px
+    height: 80px
+    line-height: 80px
+    overflow: hidden
+    background-color: lighten($color-grey, 20)
+    border-radius: 50%
+
+    &::after
+      content: ' '
+      position: absolute
+      left: 0px
+      top: 0px
+      height: 100%
+      width: 1px
+      box-shadow: 0px 0px 10px 10px lighten($color-grey, 25)
+      background-color: lighten($color-grey, 25)
+      z-index: 1
+      animation: bgColorSlide 1s infinite linear
+
+    img
+      position: relative
+      z-index: 2
+      width: 80px
+      height: 80px
+      border-radius: 50%
+      object-fit: cover
+      object-position: center center
+
+  &__title
+    font-size: 2rem !important
+    margin-top: 20px
+
+  &__icon
+    font-size: 90px
+    margin: -5px
+
+// Hours Select
+.hours-select
+  margin-top: 10px
+
+  label
+    display: inline-block
+    min-width: 110px
+    margin-right: 10px
+
+  .switch
+    display: inline-block
+
+// BS SelectPicker Custom
+.bootstrap-select.btn-group .dropdown-toggle .caret
+  right: 0px
+
+// Checkbox
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked
+  left: 0px
+
+  ~ label
+    font-weight: 500

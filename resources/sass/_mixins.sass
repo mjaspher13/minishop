@@ -1,0 +1,51 @@
+/**
+  Media Query Breakpoints */
+=media-breakpoint-min($size)
+  @if $size == lg
+    @media screen and (min-width: 1200px)
+      @content
+
+  @else if $size == md
+    @media screen and (min-width: 992px)
+      @content
+
+  @else if $size == sm
+    @media screen and (min-width: 768px)
+      @content
+
+  @else if $size == xs
+    @media screen and (min-width: 576px)
+      @content
+
+  @else
+    @media screen and (min-width: $size)
+      @content
+
+=media-breakpoint-max($size)
+  @if $size == lg
+    @media screen and (max-width: 1200px)
+      @content
+
+  @else if $size == md
+    @media screen and (max-width: 992px)
+      @content
+
+  @else if $size == sm
+    @media screen and (max-width: 768px)
+      @content
+
+  @else if $size == xs
+    @media screen and (max-width: 576px)
+      @content
+
+  @else
+    @media screen and (max-width: $size)
+      @content
+
+=reservation-status-color($color-bg, $color-text)
+  .header, .reservation-details__list__title > .label
+    background-color: $color-bg
+    color: $color-text
+
+    h2
+      color: $color-text
